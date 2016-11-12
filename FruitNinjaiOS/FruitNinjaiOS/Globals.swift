@@ -10,6 +10,9 @@ import SpriteKit
 
 // Our Global Player
 var chewy : Chewy = Chewy()
+// Game Entities
+var gameEntities : [GameEntity] = []
+// Background
 var background : SKSpriteNode = SKSpriteNode(imageNamed: "background")
 
 let gridSize : CGFloat = 32.0

@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Chewy : SKSpriteNode
+class Chewy : GameEntity
 {
     var facingDirection : Direction
     var lastPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
@@ -17,8 +17,8 @@ class Chewy : SKSpriteNode
     init() {
         facingDirection = .down
         
-        let texture = SKTexture(imageNamed: "chewy_down0")
-        super.init(texture: texture, color: .black, size: texture.size())
+        
+        super.init(imageNamed: "chewy_down0")
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.45))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
@@ -32,7 +32,7 @@ class Chewy : SKSpriteNode
         position = lastPosition
     }
     
-    func update()
+    override func update()
     {
         if (collision)
         {
