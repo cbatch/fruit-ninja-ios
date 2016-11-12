@@ -11,7 +11,8 @@ import SpriteKit
 class Chewy : SKSpriteNode
 {
     var facingDirection : Direction
-    
+    var lastPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
+    var collision : Bool = false
     
     init() {
         facingDirection = .down
@@ -19,20 +20,28 @@ class Chewy : SKSpriteNode
         let texture = SKTexture(imageNamed: "chewy_down0")
         super.init(texture: texture, color: .black, size: texture.size())
         
-        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.5))
+        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.45))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.All
-        self.physicsBody?.collisionBitMask = PhysicsCategory.All
-        self.physicsBody?.usesPreciseCollisionDetection = true
-        self.physicsBody?.isDynamic = true
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Ninja
     }
     
     func bounceBack()
     {
         print ("this is being called")
-        position.x += gridSize
-        position.y += 2 * gridSize
+        position = lastPosition
     }
+    
+    func update()
+    {
+        if (collision)
+        {
+            bounceBack()
+            collision = false
+        }
+    }
+    
+    
     
     
     required init?(coder aDecoder: NSCoder) {

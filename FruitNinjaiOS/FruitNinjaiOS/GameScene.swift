@@ -70,13 +70,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
+        //contact.contactPoint
+        
         // if the collision was with chewy and a button
         if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             print("collision")
-            (secondBody.node as! Chewy).bounceBack()
+            (secondBody.node as! Chewy).collision = true
         }
     }
+    
+
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -85,6 +89,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        cam.position = CGPoint(x: chewy.position.x, y: chewy.position.y - 2 * gridSize)// keeps the camera focused on the player
+    }
+    
+    override func didFinishUpdate() {
+        chewy.update()
+        cam.position = CGPoint(x: chewy.position.x, y: chewy.position.y - 2 * gridSize)
     }
 }

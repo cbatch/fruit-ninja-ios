@@ -52,6 +52,8 @@ class InputControls {
         for touch : AnyObject in touches {
             let touchLocation = touch.location(in: scene.camera!)
             
+            chewy.lastPosition = chewy.position
+            
             if leftMovementButton.contains(touchLocation) {
                 chewy.position.x -= gridSize
             }
