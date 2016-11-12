@@ -15,7 +15,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let cam = SKCameraNode()
     var inputControls : InputControls?
     var levelBuilder : LevelBuilder = LevelBuilder()
-    var gameEntities : [SKSpriteNode] = []
     
     override func didMove(to view: SKView) {
         // set the camera to be our camera node
@@ -51,6 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for sprite in levelBuilder.createLevel(level: levelBuilder.levelOne)
         {
             addChild(sprite)
+            gameEntities.append(sprite)
         }
         
         
@@ -79,6 +79,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("collision")
             (secondBody.node as! Chewy).collision = true
         }
+        // if the collision was with chewy and a button
+        if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Arrow != 0)) {
+            (secondBody.node as! ArrowEntity).distanceToTravel = 0
+        }
     }
     
 
@@ -86,14 +91,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         inputControls!.respondToTouchEvent(touches, scene: self)
-        
-        for touch : AnyObject in touches {
-            let touchLocation = touch.location(in: self)
-            let arrow = ArrowEntity(power: 5, direction: .right)
-            arrow.position = touchLocation
-            gameEntities.append(arrow)
-            addChild(arrow)
-        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -105,9 +102,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didFinishUpdate() {
-        chewy.update()
         for sprite in gameEntities {
-            (sprite as! ArrowEntity).update()
+            sprite.update()
         }
         cam.position = CGPoint(x: chewy.position.x, y: chewy.position.y - 2 * gridSize)
     }

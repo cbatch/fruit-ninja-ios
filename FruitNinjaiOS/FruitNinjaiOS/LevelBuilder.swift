@@ -40,7 +40,7 @@ class LevelBuilder
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
-        ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
+        ["|","|"," ","T"," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|","O"," "," "," "," "," "," "," "," "," "," ","O","|","|"],
         ["|","|","X","O"," "," "," "," "," "," "," "," ","O","X","|","|"],
         ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"],
@@ -51,30 +51,32 @@ class LevelBuilder
     
     
     
-    func createLevel(level: [[String]]) -> [SKSpriteNode]
+    func createLevel(level: [[String]]) -> [GameEntity]
     {
-        var levelObjects : [SKSpriteNode] = []
+        var levelObjects : [GameEntity] = []
         for row in 0...level.count - 1
         {
             for column in 0...level[0].count - 1
             {
                 let xCoord = CGFloat(column) * gridSize
                 let yCoord = CGFloat(level.count - row - 1) * gridSize
-                var levelObject : SKSpriteNode? = nil
+                var levelObject : GameEntity? = nil
                 switch (level[row][column])
                 {
-                    case "O":
-                        levelObject = SKSpriteNode(imageNamed: "barrel")
-                        levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
-                        levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
-                        levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
-                    case "X":
-                        levelObject = SKSpriteNode(imageNamed: "crate")
-                        levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
-                        levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
-                        levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "O":
+                    levelObject = GameEntity(imageNamed: "barrel")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "X":
+                    levelObject = GameEntity(imageNamed: "crate")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "T":
+                    levelObject = ArrowTrapEntity(direction: .up)
                     default: break
                 }
                 if let sprite = levelObject {

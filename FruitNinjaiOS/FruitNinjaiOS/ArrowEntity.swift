@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class ArrowEntity : SKSpriteNode
+class ArrowEntity : GameEntity
 {
     
     var distanceToTravel : Int
@@ -22,7 +22,7 @@ class ArrowEntity : SKSpriteNode
         switch (direction)
         {
         case .up:
-            imageName = "arrow_up"
+            imageName = "arrow"
         case .down:
             imageName = "arrow_down"
         case .right:
@@ -30,8 +30,14 @@ class ArrowEntity : SKSpriteNode
         case .left:
             imageName = "arrow_left"
         }
-        let texture = SKTexture(imageNamed: imageName)
-        super.init(texture: texture, color: .black, size: texture.size())
+        
+        super.init(imageNamed: imageName)
+        
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Arrow
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Arrow
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,7 +47,7 @@ class ArrowEntity : SKSpriteNode
         super.init(coder: aDecoder)
     }
     
-    func update()
+    override func update()
     {
         if (distanceToTravel > 0)
         {
