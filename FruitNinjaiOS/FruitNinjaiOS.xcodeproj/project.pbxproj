@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */; };
+		BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */; };
 		BC7BE86E1DD7061700C1503D /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86D1DD7061700C1503D /* assets */; };
 		BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86F1DD7081700C1503D /* sprites.atlas */; };
 		BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91C1F81DD6F90E0006A326 /* Chewy.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
+		BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowEntity.swift; sourceTree = "<group>"; };
 		BC7BE86D1DD7061700C1503D /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		BC7BE86F1DD7081700C1503D /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		BC91C1F81DD6F90E0006A326 /* Chewy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chewy.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				BC7BE86D1DD7061700C1503D /* assets */,
 				E74813E01DD6DBB30060E14A /* AppDelegate.swift */,
 				E74813E61DD6DBB30060E14A /* GameScene.swift */,
+				BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */,
 				BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */,
 				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
 				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
@@ -164,6 +167,7 @@
 				E74813E91DD6DBB30060E14A /* GameViewController.swift in Sources */,
 				BC91C1FF1DD6FF930006A326 /* Globals.swift in Sources */,
 				BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */,
+				BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */,
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,
 				BC91C1FD1DD6FE820006A326 /* Constants.swift in Sources */,

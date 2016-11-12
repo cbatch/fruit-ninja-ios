@@ -68,18 +68,17 @@ class LevelBuilder
                         levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
                         levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
                         levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.All
+                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
                     case "X":
                         levelObject = SKSpriteNode(imageNamed: "crate")
-                        levelObject!.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: gridSize * 0.9, height: gridSize * 0.9))
+                        levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
                         levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
                         levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.All
+                        levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
                     default: break
                 }
                 if let sprite = levelObject {
                     sprite.position = CGPoint(x: xCoord, y: yCoord)
-                    sprite.physicsBody?.usesPreciseCollisionDetection = true
                     sprite.physicsBody?.isDynamic = false
                     levelObjects.append(sprite)
                 }

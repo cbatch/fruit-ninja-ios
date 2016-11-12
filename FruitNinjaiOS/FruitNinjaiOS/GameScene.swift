@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let cam = SKCameraNode()
     var inputControls : InputControls?
     var levelBuilder : LevelBuilder = LevelBuilder()
+    var gameEntities : [SKSpriteNode] = []
     
     override func didMove(to view: SKView) {
         // set the camera to be our camera node
@@ -70,21 +71,44 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
+        //contact.contactPoint
+        
         // if the collision was with chewy and a button
         if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             print("collision")
-            (secondBody.node as! Chewy).bounceBack()
+            (secondBody.node as! Chewy).collision = true
         }
     }
+    
+
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         inputControls!.respondToTouchEvent(touches, scene: self)
+        
+        for touch : AnyObject in touches {
+            let touchLocation = touch.location(in: self)
+            let arrow = ArrowEntity(power: 5, direction: .right)
+            arrow.position = touchLocation
+            gameEntities.append(arrow)
+            addChild(arrow)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        cam.position = CGPoint(x: chewy.position.x, y: chewy.position.y - 2 * gridSize)// keeps the camera focused on the player
+    }
+    
+    override func didFinishUpdate() {
+        chewy.update()
+        for sprite in gameEntities {
+            (sprite as! ArrowEntity).update()
+        }
+        cam.position = CGPoint(x: chewy.position.x, y: chewy.position.y - 2 * gridSize)
     }
 }
