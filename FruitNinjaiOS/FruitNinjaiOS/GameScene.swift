@@ -41,9 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(cam)
         
-        chewy.position = CGPoint(x: 5 * gridSize, y: 5 * gridSize)
-
-
+        chewy.position = CGPoint(x: 8 * gridSize, y: 3 * gridSize)
+        gameEntities.append(chewy)
         addChild(chewy)
         
         
@@ -72,18 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //contact.contactPoint
-        
-        // if the collision was with chewy and a button
-        if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
-            print("collision")
-            (secondBody.node as! Chewy).collision = true
-        }
-        // if the collision was with chewy and a button
-        if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Arrow != 0)) {
-            (secondBody.node as! ArrowEntity).distanceToTravel = 0
-        }
+        CollisionHandler.handleCollision(firstBody: firstBody, secondBody: secondBody, contact: contact)
     }
     
 

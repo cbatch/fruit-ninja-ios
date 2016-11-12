@@ -16,3 +16,6 @@ var gameEntities : [GameEntity] = []
 var background : SKSpriteNode = SKSpriteNode(imageNamed: "background")
 
 let gridSize : CGFloat = 32.0
+
+// The Running Game Scene
+var scene : GameScene?
