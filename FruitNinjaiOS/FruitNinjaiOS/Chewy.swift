@@ -12,11 +12,26 @@ class Chewy : SKSpriteNode
 {
     var facingDirection : Direction
     
-    override init(texture: SKTexture!, color: UIColor, size: CGSize) {
-        
-        
+    
+    init() {
         facingDirection = .down
-        super.init(texture: texture, color: color, size: size)
+        
+        let texture = SKTexture(imageNamed: "chewy_down0")
+        super.init(texture: texture, color: .black, size: texture.size())
+        
+        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.5))
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.All
+        self.physicsBody?.collisionBitMask = PhysicsCategory.All
+        self.physicsBody?.usesPreciseCollisionDetection = true
+        self.physicsBody?.isDynamic = true
+    }
+    
+    func bounceBack()
+    {
+        print ("this is being called")
+        position.x += gridSize
+        position.y += 2 * gridSize
     }
     
     

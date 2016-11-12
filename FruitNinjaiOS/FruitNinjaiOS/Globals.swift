@@ -9,7 +9,7 @@
 import SpriteKit
 
 // Our Global Player
-var chewy : SKSpriteNode = SKSpriteNode(imageNamed: "barrel")
+var chewy : Chewy = Chewy()
 var background : SKSpriteNode = SKSpriteNode(imageNamed: "background")
 
 let gridSize : CGFloat = 32.0

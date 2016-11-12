@@ -23,9 +23,13 @@ class InputControls {
     init (screenSize: CGSize) {
         // set up the buttons color and size
         leftMovementButton = SKSpriteNode(imageNamed: "buttonLeft")
+        leftMovementButton.zPosition = 1
         rightMovementButton = SKSpriteNode(imageNamed: "buttonRight")
+        rightMovementButton.zPosition = 1
         upMovementButton = SKSpriteNode(imageNamed: "buttonUp")
+        upMovementButton.zPosition = 1
         downMovementButton = SKSpriteNode(imageNamed: "buttonDown")
+        downMovementButton.zPosition = 1
         
         // constant to use to make relative to bottom of screen
         let toBottom = -0.5 * screenSize.height
