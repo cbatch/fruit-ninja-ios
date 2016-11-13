@@ -14,7 +14,7 @@ class GuardEntity : GameEntity
     var path : [CGPoint] = []
     var movementSpaces : Int = 0
     var pathIndex : Int = 0
-    var timer: Int = 45
+    var timer: Int = 30
     
     var vision : GameEntity = GameEntity(imageNamed: "crate")
     
@@ -36,7 +36,7 @@ class GuardEntity : GameEntity
     init() {
         super.init(imageNamed: "samurai_down0")
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 2, height: size.height * 2))
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Guard
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Guard
@@ -79,7 +79,7 @@ class GuardEntity : GameEntity
     {
         if (timer <= 0)
         {
-            timer = 45
+            timer = 30
             
             if path.count > 0 {
                 
