@@ -41,7 +41,6 @@ class Chewy : GameEntity
     
     func bounceBack()
     {
-        print ("this is being called")
         position = lastPosition
     }
     

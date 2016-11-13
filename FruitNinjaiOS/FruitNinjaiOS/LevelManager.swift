@@ -41,14 +41,17 @@ class LevelManager
              let guard2 = guardBuilder.createGuard(level: guardBuilder.guard2)
              let guard3 = guardBuilder.createGuard(level: guardBuilder.guard3)
              let guard4 = guardBuilder.createGuard(level: guardBuilder.guard4)
+             let guard5 = guardBuilder.createGuard(level: guardBuilder.guard5)
              scene!.addChild(guard1)
              scene!.addChild(guard2)
              scene!.addChild(guard3)
              scene!.addChild(guard4)
+             scene!.addChild(guard5)
              gameEntities.append(guard1)
              gameEntities.append(guard2)
              gameEntities.append(guard3)
              gameEntities.append(guard4)
+             gameEntities.append(guard5)
         case(2):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
         default: break
