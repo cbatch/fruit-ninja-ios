@@ -22,7 +22,7 @@ class ArrowEntity : GameEntity
         switch (direction)
         {
         case .up:
-            imageName = "arrow"
+            imageName = "arrow_up"
         case .down:
             imageName = "arrow_down"
         case .right:
@@ -33,9 +33,9 @@ class ArrowEntity : GameEntity
         
         super.init(imageNamed: imageName)
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 0.9, height: size.height * 0.9))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Arrow
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Ninja
         self.physicsBody?.collisionBitMask = PhysicsCategory.Arrow
 
     }

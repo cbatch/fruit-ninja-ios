@@ -22,7 +22,7 @@ class Chewy : GameEntity
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.45))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ninja
     }
     

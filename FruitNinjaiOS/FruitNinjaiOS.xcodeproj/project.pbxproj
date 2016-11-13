@@ -11,6 +11,7 @@
 		BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */; };
 		BC68B95B1DD7C1680047DBD8 /* ArrowTrapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */; };
 		BC68B95D1DD7C3230047DBD8 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */; };
+		BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */; };
 		BC7BE86E1DD7061700C1503D /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86D1DD7061700C1503D /* assets */; };
 		BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86F1DD7081700C1503D /* sprites.atlas */; };
 		BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91C1F81DD6F90E0006A326 /* Chewy.swift */; };
@@ -29,6 +30,7 @@
 		BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowEntity.swift; sourceTree = "<group>"; };
 		BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowTrapEntity.swift; sourceTree = "<group>"; };
 		BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
+		BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionHandler.swift; sourceTree = "<group>"; };
 		BC7BE86D1DD7061700C1503D /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		BC7BE86F1DD7081700C1503D /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		BC91C1F81DD6F90E0006A326 /* Chewy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chewy.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				BC7BE86D1DD7061700C1503D /* assets */,
 				E74813E01DD6DBB30060E14A /* AppDelegate.swift */,
 				E74813E61DD6DBB30060E14A /* GameScene.swift */,
+				BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */,
 				BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */,
 				BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */,
 				BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */,
@@ -175,6 +178,7 @@
 				BC91C1FF1DD6FF930006A326 /* Globals.swift in Sources */,
 				BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */,
 				BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */,
+				BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */,
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,
 				BC91C1FD1DD6FE820006A326 /* Constants.swift in Sources */,
