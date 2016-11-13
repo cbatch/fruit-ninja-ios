@@ -14,10 +14,12 @@ class ArrowEntity : GameEntity
     var distanceToTravel : Int
     var direction : Direction
     var timer : Int = 2
+    var onFire: Bool
     
-    init(power: Int, direction: Direction) {
+    init(power: Int, direction: Direction, onFire: Bool = false) {
         distanceToTravel = power
         self.direction = direction
+        self.onFire = onFire
         var imageName : String
         
         switch (direction)
@@ -44,6 +46,7 @@ class ArrowEntity : GameEntity
         // Decoding length here would be nice...
         distanceToTravel = 0
         direction = .right
+        onFire = false
         
         super.init(coder: aDecoder)
     }
@@ -76,5 +79,21 @@ class ArrowEntity : GameEntity
             }
         }
         timer -= 1
+    }
+    
+    func lightOnFire()
+    {
+        onFire = true;
+        switch (direction)
+        {
+        case .up:
+            texture? = SKTexture(imageNamed: "fire_arrow_up")
+        case .down:
+            texture? = SKTexture(imageNamed: "fire_arrow_down")
+        case .right:
+            texture? = SKTexture(imageNamed: "fire_arrow_right")
+        case .left:
+            texture? = SKTexture(imageNamed: "fire_arrow_left")
+        }
     }
 }

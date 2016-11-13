@@ -29,6 +29,7 @@
 		E74813E91DD6DBB30060E14A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74813E81DD6DBB30060E14A /* GameViewController.swift */; };
 		E74813EC1DD6DBB30060E14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74813EA1DD6DBB30060E14A /* Main.storyboard */; };
 		E74813F11DD6DBB30060E14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74813EF1DD6DBB30060E14A /* LaunchScreen.storyboard */; };
+		E7500DD61DD85C1C004A53C2 /* TorchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7500DD51DD85C1C004A53C2 /* TorchEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		E74813EB1DD6DBB30060E14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E74813F01DD6DBB30060E14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74813F21DD6DBB30060E14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7500DD51DD85C1C004A53C2 /* TorchEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorchEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */,
 				BC68B9691DD802120047DBD8 /* SwitchEntity.swift */,
 				BC68B96B1DD833DB0047DBD8 /* GuardEntity.swift */,
+				E7500DD51DD85C1C004A53C2 /* TorchEntity.swift */,
 			);
 			name = GameEntities;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */,
 				BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */,
 				BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */,
+				E7500DD61DD85C1C004A53C2 /* TorchEntity.swift in Sources */,
 				BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */,
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,

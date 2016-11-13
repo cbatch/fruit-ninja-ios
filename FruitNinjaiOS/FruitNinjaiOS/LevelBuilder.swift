@@ -42,7 +42,7 @@ class LevelBuilder
         ["|","|","[",".",".","r"," "," "," "," ","[",".",".","]","|","|"],
         ["|","|","(","_","_",")"," "," "," "," ","(","_","_",")","|","|"],
         ["|","|","O"," "," "," "," "," "," "," "," "," "," ","O","|","|"],
-        ["|","|","X"," "," "," "," ","C"," "," "," "," ","O","X","|","|"],
+        ["|","|","X"," "," "," "," ","C"," ","F"," ","f","O","X","|","|"],
         ["|","|","-","-","-","-","-","d","-","-","-","-","-","-","|","|"],
         ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"]
     ]
@@ -293,6 +293,10 @@ class LevelBuilder
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
                     levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Door
                     yOffset = CGFloat(levelObject!.size.height / 4)
+                case "f":
+                    levelObject = TorchEntity(isLit: false)
+                case "F":
+                    levelObject = TorchEntity(isLit: true)
                 case "l":
                     levelObject = ArrowTrapEntity(direction: .left)
                     levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)

@@ -16,8 +16,9 @@ struct PhysicsCategory {
     static let Pit      : UInt32 = 0b100
     static let Arrow    : UInt32 = 0b1000
     static let Target   : UInt32 = 0b10000
-    static let Guard    : UInt32 = 0b100000
-    static let Ninja    : UInt32 = 0b1000000
+    static let Torch    : UInt32 = 0b100000
+    static let Guard    : UInt32 = 0b1000000
+    static let Ninja    : UInt32 = 0b10000000
 }
 
 
@@ -103,20 +104,20 @@ class CollisionHandler
                 removeFromGameEntities(sprite: arrow)
             }
         }
-        
-        // if the collision was with an arrow and target
+        // if the collision was with an arrow and torch
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Target != 0)) {
-            (secondBody.node as! TargetEntity).hit = true
-            if let arrow = (firstBody.node as? ArrowEntity) {
-                let stubArrow = GameEntity(imageNamed: "arrow_up_half")
-                stubArrow.position = arrow.position
-                scene!.addChild(stubArrow)
-                gameEntities.append(stubArrow)
-                
+            (secondBody.categoryBitMask & PhysicsCategory.Torch != 0)) {
+            if let torch = (secondBody.node as? TorchEntity) {
+                if let arrow = (firstBody.node as? ArrowEntity) {
+                    if torch.isLit {
+                        arrow.lightOnFire()
+                    }
+                    else if arrow.onFire {
+                        torch.lightOnFire()
+                    }
+                }
             }
         }
-        
         
         
         
