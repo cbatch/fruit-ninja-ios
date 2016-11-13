@@ -21,18 +21,20 @@ class ArrowTrapEntity : GameEntity
         switch (direction)
         {
         case .up:
-            imageName = "arrow"
+            imageName = "trap_up"
         case .down:
-            imageName = "arrow_down"
+            imageName = "trap_down"
         case .right:
-            imageName = "arrow_right"
+            imageName = "trap_right"
         case .left:
-            imageName = "arrow_left"
+            imageName = "trap_left"
         }
         
         super.init(imageNamed: imageName)
         
-        self.worthUpdating = true
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
     }
     
     override func update()
@@ -50,7 +52,5 @@ class ArrowTrapEntity : GameEntity
         direction = .right
         
         super.init(coder: aDecoder)
-        
-        worthUpdating = true
     }
 }

@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class TargetEntity : GameEntity
+class TargetEntity : SwitchEntity
 {
     var hit : Bool = false
     var hitOnce : Bool = false
@@ -20,15 +20,11 @@ class TargetEntity : GameEntity
         self.physicsBody?.categoryBitMask = PhysicsCategory.Target
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Target
-        
-        self.worthUpdating = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         // Decoding length here would be nice...
         super.init(coder: aDecoder)
-        
-        self.worthUpdating = true
     }
     
     override func update()

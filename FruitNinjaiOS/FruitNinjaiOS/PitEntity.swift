@@ -20,15 +20,11 @@ class PitEntity : GameEntity
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
         self.physicsBody?.collisionBitMask = PhysicsCategory.Pit
         
-        self.worthUpdating = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         // Decoding length here would be nice...
         super.init(coder: aDecoder)
-        
-        self.worthUpdating = true
     }
     
     override func update()

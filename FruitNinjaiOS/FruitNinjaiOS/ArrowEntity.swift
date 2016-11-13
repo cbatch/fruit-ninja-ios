@@ -37,8 +37,6 @@ class ArrowEntity : GameEntity
         self.physicsBody?.categoryBitMask = PhysicsCategory.Arrow
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Ninja | PhysicsCategory.Target
         self.physicsBody?.collisionBitMask = PhysicsCategory.Arrow
-
-        self.worthUpdating = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,8 +45,6 @@ class ArrowEntity : GameEntity
         direction = .right
         
         super.init(coder: aDecoder)
-        
-        self.worthUpdating = true
     }
     
     override func update()
@@ -69,6 +65,10 @@ class ArrowEntity : GameEntity
             }
             
             distanceToTravel -= 1
+        }
+        else
+        {
+            removeFromGameEntities(sprite: self)
         }
     }
 }

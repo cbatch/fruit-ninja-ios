@@ -31,7 +31,7 @@ class InputControls {
         upMovementButton.zPosition = 1
         downMovementButton = SKSpriteNode(imageNamed: "buttonDown")
         downMovementButton.zPosition = 1
-        arrowButton = SKSpriteNode(imageNamed: "crate")
+        arrowButton = SKSpriteNode(imageNamed: "buttonArrow")
         arrowButton.zPosition = 1
         
         // constant to use to make relative to bottom of screen
@@ -42,7 +42,7 @@ class InputControls {
         rightMovementButton.position = CGPoint(x: longerSide, y: toBottom + buttonYCenter)
         upMovementButton.position = CGPoint(x: 0.0, y: toBottom + buttonYCenter + shorterSide)
         downMovementButton.position = CGPoint(x: 0.0, y: toBottom + buttonYCenter - shorterSide)
-        arrowButton.position = CGPoint(x: longerSide, y: toBottom + buttonYCenter + longerSide)
+        arrowButton.position = CGPoint(x: 0.25 * screenSize.width + 16, y: toBottom + buttonYCenter + longerSide)
     }
     
     
@@ -75,7 +75,7 @@ class InputControls {
                 chewy.facingDirection = .down
             }
             else if arrowButton.contains(touchLocation) {
-                spawnArrow(position: chewy.position, direction: chewy.facingDirection)
+                chewy.shootArrow = true
             }
         }
     }

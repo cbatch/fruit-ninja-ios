@@ -10,21 +10,33 @@ import SpriteKit
 
 class Chewy : GameEntity
 {
-    var facingDirection : Direction
+    var shootArrow : Bool = false
+    var facingDirection : Direction {
+        didSet {
+            switch (facingDirection)
+            {
+            case .up:
+                chewy.texture? = SKTexture(imageNamed: "chewy_up0")
+            case .down:
+                chewy.texture? = SKTexture(imageNamed: "chewy_down0")
+            case .left:
+                chewy.texture? = SKTexture(imageNamed: "chewy_left0")
+            case .right:
+                chewy.texture? = SKTexture(imageNamed: "chewy_right0")
+            }
+        }
+    }
     var lastPosition : CGPoint = CGPoint(x: 0.0, y: 0.0)
     var collision : Bool = false
     
     init() {
         facingDirection = .down
-        
         super.init(imageNamed: "chewy_down0")
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.4))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Arrow
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.All
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ninja
-        
-        self.worthUpdating = true
     }
     
     func bounceBack()
@@ -40,6 +52,11 @@ class Chewy : GameEntity
             bounceBack()
             collision = false
         }
+        if (shootArrow)
+        {
+            spawnArrow(position: chewy.position, direction: chewy.facingDirection)
+            shootArrow = false
+        }
     }
     
     
@@ -50,6 +67,5 @@ class Chewy : GameEntity
         facingDirection = .down
         
         super.init(coder: aDecoder)
-        self.worthUpdating = true
     }
 }
