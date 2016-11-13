@@ -49,13 +49,51 @@ class CollisionHandler
         if ((firstBody.categoryBitMask & PhysicsCategory.Guard != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
-            levelManager.resetlevel()
+            
+            if let guard1 = (firstBody.node as? GuardEntity)
+            {
+                let exclam = GameEntity(imageNamed: "exclamation")
+                exclam.position = CGPoint(x: guard1.position.x, y: guard1.position.y + gridSize)
+                scene!.addChild(exclam)
+                gameEntities.append(exclam)
+                // halt movement and face
+                guard1.movementSpaces = 0
+                guard1.path = []
+                
+                if let player = (secondBody.node as? Chewy)
+                {
+                    player.collision = true
+                    switch (player.facingDirection)
+                    {
+                    case .up:
+                        guard1.direction = .down
+                    case .down:
+                        guard1.direction = .up
+                    case .left:
+                        guard1.direction = .right
+                    case .right:
+                        guard1.direction = .left
+                        
+                    }
+                }
+                
+            
+                scene!.isPaused = true
+                Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(2.0), repeats: false, block: {(Timer: Timer) -> Void in
+                    levelManager.resetlevel()
+                    scene!.isPaused = false
+                })
+            }
         }
         
         if ((firstBody.categoryBitMask & PhysicsCategory.Pit != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
-            levelManager.resetlevel()
+            scene!.isPaused = true
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(2.0), repeats: false, block: {(Timer: Timer) -> Void in
+                levelManager.resetlevel()
+                scene!.isPaused = false
+            })
         }
         
         
@@ -150,6 +188,7 @@ class CollisionHandler
                         guard1.direction = .left
                         
                     }
+                    arrow.removeFromParent()
                 }
                 
             }
