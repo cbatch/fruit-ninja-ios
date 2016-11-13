@@ -16,8 +16,9 @@ struct PhysicsCategory {
     static let Pit      : UInt32 = 0b100
     static let Arrow    : UInt32 = 0b1000
     static let Target   : UInt32 = 0b10000
-    static let Guard    : UInt32 = 0b100000
-    static let Ninja    : UInt32 = 0b1000000
+    static let Torch    : UInt32 = 0b100000
+    static let Guard    : UInt32 = 0b1000000
+    static let Ninja    : UInt32 = 0b10000000
 }
 
 
@@ -32,7 +33,9 @@ class CollisionHandler
          */
         
         // if the collision was with chewy and an obstacle
-        if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
+        if (((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) ||
+            (firstBody.categoryBitMask & PhysicsCategory.Torch != 0) ||
+            (firstBody.categoryBitMask & PhysicsCategory.Target != 0)) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
             (secondBody.node as! Chewy).collision = true
@@ -48,13 +51,51 @@ class CollisionHandler
         if ((firstBody.categoryBitMask & PhysicsCategory.Guard != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
-            levelManager.resetlevel()
+            
+            if let guard1 = (firstBody.node as? GuardEntity)
+            {
+                let exclam = GameEntity(imageNamed: "exclamation")
+                exclam.position = CGPoint(x: guard1.position.x, y: guard1.position.y + gridSize)
+                scene!.addChild(exclam)
+                gameEntities.append(exclam)
+                // halt movement and face
+                guard1.movementSpaces = 0
+                guard1.path = []
+                
+                if let player = (secondBody.node as? Chewy)
+                {
+                    player.collision = true
+                    switch (player.facingDirection)
+                    {
+                    case .up:
+                        guard1.direction = .down
+                    case .down:
+                        guard1.direction = .up
+                    case .left:
+                        guard1.direction = .right
+                    case .right:
+                        guard1.direction = .left
+                        
+                    }
+                }
+                
+            
+                scene!.isPaused = true
+                Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(2.0), repeats: false, block: {(Timer: Timer) -> Void in
+                    levelManager.resetlevel()
+                    scene!.isPaused = false
+                })
+            }
         }
         
         if ((firstBody.categoryBitMask & PhysicsCategory.Pit != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
-            levelManager.resetlevel()
+            scene!.isPaused = true
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(2.0), repeats: false, block: {(Timer: Timer) -> Void in
+                levelManager.resetlevel()
+                scene!.isPaused = false
+            })
         }
         
         
@@ -103,20 +144,20 @@ class CollisionHandler
                 removeFromGameEntities(sprite: arrow)
             }
         }
-        
-        // if the collision was with an arrow and target
+        // if the collision was with an arrow and torch
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Target != 0)) {
-            (secondBody.node as! TargetEntity).hit = true
-            if let arrow = (firstBody.node as? ArrowEntity) {
-                let stubArrow = GameEntity(imageNamed: "arrow_up_half")
-                stubArrow.position = arrow.position
-                scene!.addChild(stubArrow)
-                gameEntities.append(stubArrow)
-                
+            (secondBody.categoryBitMask & PhysicsCategory.Torch != 0)) {
+            if let torch = (secondBody.node as? TorchEntity) {
+                if let arrow = (firstBody.node as? ArrowEntity) {
+                    if torch.isLit {
+                        arrow.lightOnFire()
+                    }
+                    else if arrow.onFire {
+                        torch.lightOnFire()
+                    }
+                }
             }
         }
-        
         
         
         
@@ -149,6 +190,7 @@ class CollisionHandler
                         guard1.direction = .left
                         
                     }
+                    arrow.removeFromParent()
                 }
                 
             }

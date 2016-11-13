@@ -7,13 +7,16 @@
 //
 
 import SpriteKit
+import CoreGraphics
 
 class GuardEntity : GameEntity
 {
     var path : [CGPoint] = []
     var movementSpaces : Int = 0
     var pathIndex : Int = 0
-    var timer: Int = 45
+    var timer: Int = 30
+    
+    var vision : GameEntity = GameEntity(imageNamed: "crate")
     
     var direction: Direction = .down {
         didSet {
@@ -33,11 +36,10 @@ class GuardEntity : GameEntity
     init() {
         super.init(imageNamed: "samurai_down0")
         
-        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.4))
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Guard
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Guard
-        
     }
     
     func nextMove()
@@ -77,7 +79,7 @@ class GuardEntity : GameEntity
     {
         if (timer <= 0)
         {
-            timer = 45
+            timer = 30
             
             if path.count > 0 {
                 
@@ -97,9 +99,9 @@ class GuardEntity : GameEntity
                     position.y = (CGFloat)((Int)(position.y - gridSize + epsilon))
                 }
                 
-                
                 movementSpaces -= 1
             }
+            
         }
         timer -= 1
     }

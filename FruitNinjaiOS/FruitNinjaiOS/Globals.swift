@@ -28,7 +28,7 @@ var scene : GameScene?
 // I'm sorry
 func spawnArrow(position: CGPoint, direction: Direction)
 {
-    let arrow = ArrowEntity(power: 5, direction: direction)
+    let arrow = ArrowEntity(power: 7, direction: direction)
     switch (direction)
     {
     case .up:
