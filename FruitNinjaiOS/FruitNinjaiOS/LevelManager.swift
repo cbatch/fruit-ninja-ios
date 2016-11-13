@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 3
+    var level : Int = 0
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     

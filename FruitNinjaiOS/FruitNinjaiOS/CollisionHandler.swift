@@ -93,7 +93,7 @@ class CollisionHandler
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
             scene!.isPaused = true
-            Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(2.0), repeats: false, block: {(Timer: Timer) -> Void in
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(1.0), repeats: false, block: {(Timer: Timer) -> Void in
                 levelManager.resetlevel()
                 scene!.isPaused = false
             })
