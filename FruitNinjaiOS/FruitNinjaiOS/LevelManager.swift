@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 0
+    var level : Int = 1
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     
@@ -36,7 +36,19 @@ class LevelManager
             switchCounter = 2
             switchAction = LevelManager.levelOneSwitch
         case (1):
-             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
+             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelTwo)
+             let guard1 = guardBuilder.createGuard(level: guardBuilder.guard1)
+             let guard2 = guardBuilder.createGuard(level: guardBuilder.guard2)
+             let guard3 = guardBuilder.createGuard(level: guardBuilder.guard3)
+             let guard4 = guardBuilder.createGuard(level: guardBuilder.guard4)
+             scene!.addChild(guard1)
+             scene!.addChild(guard2)
+             scene!.addChild(guard3)
+             scene!.addChild(guard4)
+             gameEntities.append(guard1)
+             gameEntities.append(guard2)
+             gameEntities.append(guard3)
+             gameEntities.append(guard4)
         case(2):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
         default: break

@@ -16,6 +16,8 @@
 		BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */; };
 		BC68B9681DD7F06B0047DBD8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */; };
 		BC68B96A1DD802120047DBD8 /* SwitchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9691DD802120047DBD8 /* SwitchEntity.swift */; };
+		BC68B96C1DD833DB0047DBD8 /* GuardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B96B1DD833DB0047DBD8 /* GuardEntity.swift */; };
+		BC68B96E1DD839B00047DBD8 /* GuardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B96D1DD839B00047DBD8 /* GuardBuilder.swift */; };
 		BC7BE86E1DD7061700C1503D /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86D1DD7061700C1503D /* assets */; };
 		BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86F1DD7081700C1503D /* sprites.atlas */; };
 		BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91C1F81DD6F90E0006A326 /* Chewy.swift */; };
@@ -39,6 +41,8 @@
 		BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetEntity.swift; sourceTree = "<group>"; };
 		BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		BC68B9691DD802120047DBD8 /* SwitchEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchEntity.swift; sourceTree = "<group>"; };
+		BC68B96B1DD833DB0047DBD8 /* GuardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardEntity.swift; sourceTree = "<group>"; };
+		BC68B96D1DD839B00047DBD8 /* GuardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardBuilder.swift; sourceTree = "<group>"; };
 		BC7BE86D1DD7061700C1503D /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		BC7BE86F1DD7081700C1503D /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		BC91C1F81DD6F90E0006A326 /* Chewy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chewy.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 				BC68B9631DD7DA200047DBD8 /* PitEntity.swift */,
 				BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */,
 				BC68B9691DD802120047DBD8 /* SwitchEntity.swift */,
+				BC68B96B1DD833DB0047DBD8 /* GuardEntity.swift */,
 			);
 			name = GameEntities;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 				BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */,
 				BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */,
 				BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */,
+				BC68B96D1DD839B00047DBD8 /* GuardBuilder.swift */,
 				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
 				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
 				BC91C1FC1DD6FE820006A326 /* Constants.swift */,
@@ -196,6 +202,7 @@
 				E74813E91DD6DBB30060E14A /* GameViewController.swift in Sources */,
 				BC68B95B1DD7C1680047DBD8 /* ArrowTrapEntity.swift in Sources */,
 				BC91C1FF1DD6FF930006A326 /* Globals.swift in Sources */,
+				BC68B96E1DD839B00047DBD8 /* GuardBuilder.swift in Sources */,
 				BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */,
 				BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */,
 				BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */,
@@ -203,6 +210,7 @@
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,
 				BC68B9641DD7DA200047DBD8 /* PitEntity.swift in Sources */,
+				BC68B96C1DD833DB0047DBD8 /* GuardEntity.swift in Sources */,
 				BC68B96A1DD802120047DBD8 /* SwitchEntity.swift in Sources */,
 				BC91C1FD1DD6FE820006A326 /* Constants.swift in Sources */,
 				BC68B9681DD7F06B0047DBD8 /* LevelManager.swift in Sources */,

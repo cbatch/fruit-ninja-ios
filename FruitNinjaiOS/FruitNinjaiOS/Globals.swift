@@ -18,7 +18,8 @@ var background : SKSpriteNode = SKSpriteNode(imageNamed: "background")
 var levelBuilder : LevelBuilder = LevelBuilder()
 // Level Manager
 var levelManager : LevelManager = LevelManager()
-
+// Guard Builder
+var guardBuilder : GuardBuilder = GuardBuilder()
 let gridSize : CGFloat = 32.0
 
 // The Running Game Scene

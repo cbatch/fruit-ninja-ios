@@ -13,6 +13,7 @@ class ArrowEntity : GameEntity
     
     var distanceToTravel : Int
     var direction : Direction
+    var timer : Int = 2
     
     init(power: Int, direction: Direction) {
         distanceToTravel = power
@@ -49,26 +50,31 @@ class ArrowEntity : GameEntity
     
     override func update()
     {
-        if (distanceToTravel > 0)
+        if (timer <= 0)
         {
-            switch (direction)
+            timer = 2
+            if (distanceToTravel > 0)
             {
-            case .up:
-                position.y += gridSize
-            case .down:
-                position.y -= gridSize
-            case .right:
-                position.x += gridSize
-            case .left:
-                position.x -= gridSize
+                switch (direction)
+                {
+                case .up:
+                    position.y += gridSize
+                case .down:
+                    position.y -= gridSize
+                case .right:
+                    position.x += gridSize
+                case .left:
+                    position.x -= gridSize
+                    
+                }
                 
+                distanceToTravel -= 1
             }
-            
-            distanceToTravel -= 1
+            else
+            {
+                removeFromGameEntities(sprite: self)
+            }
         }
-        else
-        {
-            removeFromGameEntities(sprite: self)
-        }
+        timer -= 1
     }
 }
