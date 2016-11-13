@@ -36,7 +36,7 @@ class GuardEntity : GameEntity
     init() {
         super.init(imageNamed: "samurai_down0")
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 3 * gridSize, height: 3 * gridSize), center: CGPoint(x: position.x, y: position.y + gridSize))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 2, height: size.height * 2))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Guard
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Guard
