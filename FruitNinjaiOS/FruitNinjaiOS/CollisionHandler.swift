@@ -33,7 +33,9 @@ class CollisionHandler
          */
         
         // if the collision was with chewy and an obstacle
-        if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
+        if (((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) ||
+            (firstBody.categoryBitMask & PhysicsCategory.Torch != 0) ||
+            (firstBody.categoryBitMask & PhysicsCategory.Target != 0)) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
             
             (secondBody.node as! Chewy).collision = true
