@@ -13,10 +13,4 @@ enum Direction {
     case down
 }
 
-struct PhysicsCategory {
-    static let None      : UInt32 = 0
-    static let All       : UInt32 = UInt32.max
-    static let Obstacle   : UInt32 = 0b1
-    static let Arrow : UInt32 = 0b10
-    static let Ninja: UInt32 = 0b100
-}
+
