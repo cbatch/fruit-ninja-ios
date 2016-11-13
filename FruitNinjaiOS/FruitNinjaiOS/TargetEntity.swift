@@ -18,7 +18,7 @@ class TargetEntity : GameEntity
         
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Target
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Target
         
         self.worthUpdating = true

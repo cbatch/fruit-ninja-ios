@@ -19,3 +19,30 @@ let gridSize : CGFloat = 32.0
 
 // The Running Game Scene
 var scene : GameScene?
+
+// I'm sorry
+func spawnArrow(position: CGPoint, direction: Direction)
+{
+    let arrow = ArrowEntity(power: 5, direction: direction)
+    switch (direction)
+    {
+    case .up:
+        arrow.position = CGPoint(x: position.x, y: position.y + gridSize)
+    case .down:
+        arrow.position = CGPoint(x: position.x, y: position.y - gridSize)
+    case .right:
+        arrow.position = CGPoint(x: position.x + gridSize, y: position.y)
+    case .left:
+        arrow.position = CGPoint(x: position.x - gridSize, y: position.y)
+    }
+    
+    scene!.addChild(arrow)
+    gameEntities.append(arrow)
+}
+
+// sorry not sorry
+func removeFromGameEntities(sprite: GameEntity)
+{
+    sprite.removeFromParent()
+    gameEntities.remove(at: gameEntities.index(of: sprite)!)
+}

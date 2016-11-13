@@ -23,7 +23,7 @@ class LevelBuilder
         ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
         ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
         ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
         ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
         ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
         ["|","|","P","P","P","P","p","p","P","t","P","P","P","P","|","|"],
@@ -95,9 +95,9 @@ class LevelBuilder
                 case "P":
                     levelObject = GameEntity(imageNamed: "pit")
                     levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
-                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Pit
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Pit
                 case "r":
                     levelObject = ArrowTrapEntity(direction: .right)
                 case "t":
