@@ -17,13 +17,14 @@ class Chewy : GameEntity
     init() {
         facingDirection = .down
         
-        
         super.init(imageNamed: "chewy_down0")
         
-        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.45))
+        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.4))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Ninja
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ninja
+        
+        self.worthUpdating = true
     }
     
     func bounceBack()
@@ -47,6 +48,8 @@ class Chewy : GameEntity
     required init?(coder aDecoder: NSCoder) {
         // Decoding length here would be nice...
         facingDirection = .down
+        
         super.init(coder: aDecoder)
+        self.worthUpdating = true
     }
 }

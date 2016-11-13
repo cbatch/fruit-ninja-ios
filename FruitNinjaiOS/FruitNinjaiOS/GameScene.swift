@@ -49,7 +49,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for sprite in levelBuilder.createLevel(level: levelBuilder.levelOne)
         {
             addChild(sprite)
-            gameEntities.append(sprite)
+            if (sprite.worthUpdating) {
+                gameEntities.append(sprite)
+            }
         }
         
         

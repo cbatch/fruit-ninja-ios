@@ -38,13 +38,17 @@ class ArrowEntity : GameEntity
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Ninja
         self.physicsBody?.collisionBitMask = PhysicsCategory.Arrow
 
+        self.worthUpdating = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         // Decoding length here would be nice...
         distanceToTravel = 0
         direction = .right
+        
         super.init(coder: aDecoder)
+        
+        self.worthUpdating = true
     }
     
     override func update()

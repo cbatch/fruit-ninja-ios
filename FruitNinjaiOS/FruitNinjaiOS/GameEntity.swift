@@ -10,6 +10,7 @@ import SpriteKit
 
 class GameEntity : SKSpriteNode
 {
+    var worthUpdating : Bool = false
     
     init(imageNamed: String) {
         let texture = SKTexture(imageNamed: imageNamed)

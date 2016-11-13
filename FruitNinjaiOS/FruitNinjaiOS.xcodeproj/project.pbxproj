@@ -12,6 +12,8 @@
 		BC68B95B1DD7C1680047DBD8 /* ArrowTrapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */; };
 		BC68B95D1DD7C3230047DBD8 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */; };
 		BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */; };
+		BC68B9641DD7DA200047DBD8 /* PitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9631DD7DA200047DBD8 /* PitEntity.swift */; };
+		BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */; };
 		BC7BE86E1DD7061700C1503D /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86D1DD7061700C1503D /* assets */; };
 		BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86F1DD7081700C1503D /* sprites.atlas */; };
 		BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91C1F81DD6F90E0006A326 /* Chewy.swift */; };
@@ -31,6 +33,8 @@
 		BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowTrapEntity.swift; sourceTree = "<group>"; };
 		BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionHandler.swift; sourceTree = "<group>"; };
+		BC68B9631DD7DA200047DBD8 /* PitEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitEntity.swift; sourceTree = "<group>"; };
+		BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetEntity.swift; sourceTree = "<group>"; };
 		BC7BE86D1DD7061700C1503D /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		BC7BE86F1DD7081700C1503D /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		BC91C1F81DD6F90E0006A326 /* Chewy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chewy.swift; sourceTree = "<group>"; };
@@ -57,6 +61,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC68B9621DD7D9C60047DBD8 /* GameEntities */ = {
+			isa = PBXGroup;
+			children = (
+				BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */,
+				BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */,
+				BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */,
+				BC91C1F81DD6F90E0006A326 /* Chewy.swift */,
+				BC68B9631DD7DA200047DBD8 /* PitEntity.swift */,
+				BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */,
+			);
+			name = GameEntities;
+			sourceTree = "<group>";
+		};
 		E74813D41DD6DBB10060E14A = {
 			isa = PBXGroup;
 			children = (
@@ -79,20 +96,17 @@
 				BC7BE86F1DD7081700C1503D /* sprites.atlas */,
 				BC7BE86D1DD7061700C1503D /* assets */,
 				E74813E01DD6DBB30060E14A /* AppDelegate.swift */,
-				E74813E61DD6DBB30060E14A /* GameScene.swift */,
-				BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */,
-				BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */,
-				BC68B95C1DD7C3230047DBD8 /* GameEntity.swift */,
-				BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */,
-				BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */,
-				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
-				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
-				BC91C1F81DD6F90E0006A326 /* Chewy.swift */,
-				BC91C1FC1DD6FE820006A326 /* Constants.swift */,
 				E74813E81DD6DBB30060E14A /* GameViewController.swift */,
 				E74813EA1DD6DBB30060E14A /* Main.storyboard */,
 				E74813EF1DD6DBB30060E14A /* LaunchScreen.storyboard */,
 				E74813F21DD6DBB30060E14A /* Info.plist */,
+				BC68B9621DD7D9C60047DBD8 /* GameEntities */,
+				E74813E61DD6DBB30060E14A /* GameScene.swift */,
+				BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */,
+				BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */,
+				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
+				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
+				BC91C1FC1DD6FE820006A326 /* Constants.swift */,
 			);
 			path = FruitNinjaiOS;
 			sourceTree = "<group>";
@@ -176,11 +190,13 @@
 				E74813E91DD6DBB30060E14A /* GameViewController.swift in Sources */,
 				BC68B95B1DD7C1680047DBD8 /* ArrowTrapEntity.swift in Sources */,
 				BC91C1FF1DD6FF930006A326 /* Globals.swift in Sources */,
+				BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */,
 				BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */,
 				BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */,
 				BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */,
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,
+				BC68B9641DD7DA200047DBD8 /* PitEntity.swift in Sources */,
 				BC91C1FD1DD6FE820006A326 /* Constants.swift in Sources */,
 				BC68B95D1DD7C3230047DBD8 /* GameEntity.swift in Sources */,
 			);

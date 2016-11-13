@@ -15,6 +15,7 @@ class ArrowTrapEntity : GameEntity
     
     init(direction: Direction) {
         self.direction = direction
+        
         var imageName : String
         
         switch (direction)
@@ -30,6 +31,8 @@ class ArrowTrapEntity : GameEntity
         }
         
         super.init(imageNamed: imageName)
+        
+        self.worthUpdating = true
     }
     
     override func update()
@@ -59,6 +62,9 @@ class ArrowTrapEntity : GameEntity
     required init?(coder aDecoder: NSCoder) {
         // Decoding length here would be nice...
         direction = .right
+        
         super.init(coder: aDecoder)
+        
+        worthUpdating = true
     }
 }
