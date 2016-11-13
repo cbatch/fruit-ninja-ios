@@ -17,8 +17,9 @@ struct PhysicsCategory {
     static let Arrow    : UInt32 = 0b1000
     static let Target   : UInt32 = 0b10000
     static let Torch    : UInt32 = 0b100000
-    static let Guard    : UInt32 = 0b1000000
-    static let Ninja    : UInt32 = 0b10000000
+    static let Pineapple: UInt32 = 0b1000000
+    static let Guard    : UInt32 = 0b10000000
+    static let Ninja    : UInt32 = 0b100000000
 }
 
 
@@ -98,6 +99,16 @@ class CollisionHandler
             })
         }
         
+        // if the collision was with chewy and the pineapple
+        if ((firstBody.categoryBitMask & PhysicsCategory.Pineapple != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
+            
+            if let pineapple = (firstBody.node as? PineappleEntity) {
+                pineapple.isRecovered = true
+            }
+        }
+        
+
         
         
         

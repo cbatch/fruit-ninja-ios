@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 0
+    var level : Int = 3
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     
@@ -56,6 +56,8 @@ class LevelManager
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelThree)
         case(3):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.finalStage)
+            switchAction = LevelManager.finalLevelSwitch
+            switchCounter = 1
         default: break
         }
         level += 1
@@ -81,6 +83,18 @@ class LevelManager
             if let pit = (sprite as? PitEntity)
             {
                 pit.toggle = true
+            }
+        }
+    }
+    
+    
+    static func finalLevelSwitch()
+    {
+        for sprite in gameEntities
+        {
+            if let torch = (sprite as? TorchEntity)
+            {
+                torch.lightOnFire()
             }
         }
     }
