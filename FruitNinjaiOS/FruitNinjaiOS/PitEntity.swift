@@ -12,8 +12,8 @@ class PitEntity : GameEntity
 {
     var toggle : Bool = false
     
-    init() {
-        super.init(imageNamed: "pit")
+    init(fileNamed: String) {
+        super.init(imageNamed: fileNamed)
         
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Pit

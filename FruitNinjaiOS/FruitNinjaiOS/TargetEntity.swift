@@ -31,13 +31,12 @@ class TargetEntity : SwitchEntity
     {
         if (hit && !hitOnce)
         {
-            for sprite in gameEntities
+            levelManager.switchCounter -= 1
+            if (levelManager.switchCounter == 0)
             {
-                if let pit = (sprite as? PitEntity)
-                {
-                    pit.toggle = true
-                }
+                levelManager.switchAction()
             }
+            
             hitOnce = true
         }
     }

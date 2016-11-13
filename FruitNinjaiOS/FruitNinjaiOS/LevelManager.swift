@@ -12,11 +12,12 @@ class LevelManager
 {
     var switchCounter : Int = 0
     var level : Int = 0
-    //var switches : [SwitchEntity] = []
+    var switches : [SwitchEntity] = []
+    var switchAction : () -> Void
     
     init ()
     {
-        
+        switchAction = LevelManager.levelOneSwitch
     }
     
     func nextLevel()
@@ -24,6 +25,7 @@ class LevelManager
         for sprite in gameEntities {
             removeFromGameEntities(sprite: sprite)
         }
+        switches = []
         
         var nextLevelSprites : [GameEntity] = []
         
@@ -31,6 +33,8 @@ class LevelManager
         {
         case (0):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
+            switchCounter = 2
+            switchAction = LevelManager.levelOneSwitch
         case (1):
              nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
         case(2):
@@ -42,11 +46,27 @@ class LevelManager
         
         for sprite in nextLevelSprites
         {
+            
             scene!.addChild(sprite)
             gameEntities.append(sprite)
+            
+            if let switcheroo = sprite as? SwitchEntity {
+                switches.append(switcheroo)
+            }
         }
     }
     
+    
+    static func levelOneSwitch()
+    {
+        for sprite in gameEntities
+        {
+            if let pit = (sprite as? PitEntity)
+            {
+                pit.toggle = true
+            }
+        }
+    }
     
     func resetlevel()
     {

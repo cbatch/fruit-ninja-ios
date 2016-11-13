@@ -19,13 +19,13 @@ class LevelBuilder
         ["|","|","O"," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","t","P","P","p","p","P","P","t","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|",".",".",".",".",".","p","p",".",".",".",".",".","|","|"],
+        ["|","|",".",".",".",".",".","p","p",".",".",".",".",".","|","|"],
+        ["|","|",".",".",".",".",".","p","p",".",".",".",".",".","|","|"],
+        ["|","|",".",".",".",".",".","p","p",".",".",".",".",".","|","|"],
+        ["|","|",".",".","t",".",".","p","p",".",".","t",".",".","|","|"],
+        ["|","|",".",".","P",".",".","p","p",".",".","P",".",".","|","|"],
+        ["|","|",".",".",".",".",".","p","p",".",".",".",".",".","|","|"],
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
         ["|","|","<","~","~",">"," "," "," "," ","<","~","~",">","|","|"],
@@ -117,9 +117,9 @@ class LevelBuilder
                 case ".":
                     levelObject = GameEntity(imageNamed: "blank")
                     levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
-                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Pit
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Pit
                 case "|":
                     levelObject = GameEntity(imageNamed: "crate")
                     levelObject?.alpha = 0.0
@@ -141,6 +141,7 @@ class LevelBuilder
                     scene!.addChild(chewy)
                 case "d":
                     levelObject = GameEntity(imageNamed: "door_up")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
                     levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
                     levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
@@ -161,7 +162,7 @@ class LevelBuilder
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
                     levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
                 case "p":
-                    levelObject = PitEntity()
+                    levelObject = PitEntity(fileNamed: "blank")
                     levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
                     levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Pit
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
