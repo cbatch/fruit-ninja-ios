@@ -141,7 +141,19 @@ class CollisionHandler
         // if the collision was with an arrow and chewy
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
-            levelManager.resetlevel()
+            if let arrow = (firstBody.node as? ArrowEntity) {
+                let stubArrow = GameEntity(imageNamed: "arrow_up_half")
+                stubArrow.position = arrow.position
+                scene!.addChild(stubArrow)
+                gameEntities.append(stubArrow)
+                removeFromGameEntities(sprite: arrow)
+            }
+            
+            scene!.isPaused = true
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.abs(1.0), repeats: false, block: {(Timer: Timer) -> Void in
+                levelManager.resetlevel()
+                scene!.isPaused = false
+            })
         }
         // if the collision was with an arrow and target
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
