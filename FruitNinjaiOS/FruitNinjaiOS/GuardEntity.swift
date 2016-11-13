@@ -36,18 +36,10 @@ class GuardEntity : GameEntity
     init() {
         super.init(imageNamed: "samurai_down0")
         
-        self.physicsBody = SKPhysicsBody(circleOfRadius: (gridSize * 0.4))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 3 * gridSize, height: 3 * gridSize), center: CGPoint(x: position.x, y: position.y + gridSize))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Guard
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Guard
-        
-        vision.alpha = 0.0
-        vision.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 3 * gridSize, height: 3 * gridSize))
-        vision.physicsBody?.categoryBitMask = PhysicsCategory.Guard
-        vision.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
-        vision.physicsBody?.collisionBitMask = PhysicsCategory.Guard
-        
-        self.addChild(vision)
     }
     
     func nextMove()
@@ -83,22 +75,6 @@ class GuardEntity : GameEntity
         super.init(coder: aDecoder)
     }
     
-    func updateVision()
-    {
-        switch (direction)
-        {
-        case .up:
-            vision.position = CGPoint(x: 0.0, y: gridSize * 1.5)
-        case .down:
-            vision.position = CGPoint(x: 0.0, y: -1 * gridSize * 1.5)
-        case .left:
-            vision.position = CGPoint(x: -1 * gridSize * 1.5, y: 0.0)
-        case .right:
-            vision.position = CGPoint(x: gridSize * 1.5, y: 0.0)
-        }
-        
-    }
-    
     override func update()
     {
         if (timer <= 0)
@@ -122,7 +98,6 @@ class GuardEntity : GameEntity
                 case .down:
                     position.y = (CGFloat)((Int)(position.y - gridSize + epsilon))
                 }
-                //updateVision()
                 
                 movementSpaces -= 1
             }
