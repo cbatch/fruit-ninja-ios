@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import CoreGraphics
 
 class GuardEntity : GameEntity
 {
@@ -14,6 +15,8 @@ class GuardEntity : GameEntity
     var movementSpaces : Int = 0
     var pathIndex : Int = 0
     var timer: Int = 45
+    
+    var vision : GameEntity = GameEntity(imageNamed: "crate")
     
     var direction: Direction = .down {
         didSet {
@@ -38,6 +41,13 @@ class GuardEntity : GameEntity
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja | PhysicsCategory.Arrow
         self.physicsBody?.collisionBitMask = PhysicsCategory.Guard
         
+        vision.alpha = 0.0
+        vision.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 3 * gridSize, height: 3 * gridSize))
+        vision.physicsBody?.categoryBitMask = PhysicsCategory.Guard
+        vision.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+        vision.physicsBody?.collisionBitMask = PhysicsCategory.Guard
+        
+        self.addChild(vision)
     }
     
     func nextMove()
@@ -73,6 +83,22 @@ class GuardEntity : GameEntity
         super.init(coder: aDecoder)
     }
     
+    func updateVision()
+    {
+        switch (direction)
+        {
+        case .up:
+            vision.position = CGPoint(x: 0.0, y: gridSize * 1.5)
+        case .down:
+            vision.position = CGPoint(x: 0.0, y: -1 * gridSize * 1.5)
+        case .left:
+            vision.position = CGPoint(x: -1 * gridSize * 1.5, y: 0.0)
+        case .right:
+            vision.position = CGPoint(x: gridSize * 1.5, y: 0.0)
+        }
+        
+    }
+    
     override func update()
     {
         if (timer <= 0)
@@ -96,10 +122,11 @@ class GuardEntity : GameEntity
                 case .down:
                     position.y = (CGFloat)((Int)(position.y - gridSize + epsilon))
                 }
-                
+                //updateVision()
                 
                 movementSpaces -= 1
             }
+            
         }
         timer -= 1
     }
