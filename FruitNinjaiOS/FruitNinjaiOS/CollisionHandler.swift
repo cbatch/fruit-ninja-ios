@@ -45,19 +45,22 @@ class CollisionHandler
         if ((firstBody.categoryBitMask & PhysicsCategory.Obstacle != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Arrow != 0)) {
             let arrow = (secondBody.node as! ArrowEntity)
-            arrow.removeFromParent()
-            gameEntities.remove(at: gameEntities.index(of: arrow)!)
+            removeFromGameEntities(sprite: arrow)
         }
         // if the collision was with an arrow and chewy
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Ninja != 0)) {
-            (secondBody.node as! Chewy).removeFromParent()
-            gameEntities.remove(at: gameEntities.index(of: chewy)!)
+            removeFromGameEntities(sprite: chewy)
         }
         // if the collision was with an arrow and target
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Target != 0)) {
             (secondBody.node as! TargetEntity).hit = true
+            let arrow = (firstBody.node as! ArrowEntity)
+            let stubArrow = GameEntity(imageNamed: "")
+            stubArrow.position = arrow.position
+            scene!.addChild(stubArrow)
+            removeFromGameEntities(sprite: arrow)
         }
         
         

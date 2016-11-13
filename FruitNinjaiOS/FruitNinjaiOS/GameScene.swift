@@ -38,6 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cam.addChild((inputControls?.rightMovementButton)!)
         cam.addChild((inputControls?.upMovementButton)!)
         cam.addChild((inputControls?.downMovementButton)!)
+        cam.addChild((inputControls?.arrowButton)!)
         
         addChild(cam)
         

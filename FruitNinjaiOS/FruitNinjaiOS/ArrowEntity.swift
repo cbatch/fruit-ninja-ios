@@ -35,7 +35,7 @@ class ArrowEntity : GameEntity
         
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width * 0.9, height: size.height * 0.9))
         self.physicsBody?.categoryBitMask = PhysicsCategory.Arrow
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Ninja
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Obstacle | PhysicsCategory.Ninja | PhysicsCategory.Target
         self.physicsBody?.collisionBitMask = PhysicsCategory.Arrow
 
         self.worthUpdating = true

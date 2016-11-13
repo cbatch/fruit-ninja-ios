@@ -39,21 +39,7 @@ class ArrowTrapEntity : GameEntity
     {
         if (timer == 0)
         {
-            let arrow = ArrowEntity(power: 5, direction: direction)
-            switch (direction)
-            {
-            case .up:
-                arrow.position = CGPoint(x: position.x, y: position.y + gridSize)
-            case .down:
-                arrow.position = CGPoint(x: position.x, y: position.y - gridSize)
-            case .right:
-                arrow.position = CGPoint(x: position.x + gridSize, y: position.y)
-            case .left:
-                arrow.position = CGPoint(x: position.x - gridSize, y: position.y)
-            }
-            
-            scene!.addChild(arrow)
-            gameEntities.append(arrow)
+            spawnArrow(position: position, direction: direction)
             timer = 120;
         }
         timer -= 1;

@@ -18,6 +18,7 @@ class InputControls {
     var rightMovementButton : SKSpriteNode
     var upMovementButton : SKSpriteNode
     var downMovementButton : SKSpriteNode
+    var arrowButton : SKSpriteNode
     
     
     init (screenSize: CGSize) {
@@ -30,6 +31,8 @@ class InputControls {
         upMovementButton.zPosition = 1
         downMovementButton = SKSpriteNode(imageNamed: "buttonDown")
         downMovementButton.zPosition = 1
+        arrowButton = SKSpriteNode(imageNamed: "crate")
+        arrowButton.zPosition = 1
         
         // constant to use to make relative to bottom of screen
         let toBottom = -0.5 * screenSize.height
@@ -39,11 +42,12 @@ class InputControls {
         rightMovementButton.position = CGPoint(x: longerSide, y: toBottom + buttonYCenter)
         upMovementButton.position = CGPoint(x: 0.0, y: toBottom + buttonYCenter + shorterSide)
         downMovementButton.position = CGPoint(x: 0.0, y: toBottom + buttonYCenter - shorterSide)
+        arrowButton.position = CGPoint(x: longerSide, y: toBottom + buttonYCenter + longerSide)
     }
     
     
     func getInputControls() -> [SKSpriteNode] {
-        return [leftMovementButton, rightMovementButton, upMovementButton, downMovementButton]
+        return [leftMovementButton, rightMovementButton, upMovementButton, downMovementButton, arrowButton]
     }
     
     
@@ -56,15 +60,22 @@ class InputControls {
             
             if leftMovementButton.contains(touchLocation) {
                 chewy.position.x -= gridSize
+                chewy.facingDirection = .left
             }
             else if rightMovementButton.contains(touchLocation) {
                 chewy.position.x += gridSize
+                chewy.facingDirection = .right
             }
             else if upMovementButton.contains(touchLocation) {
                 chewy.position.y += gridSize
+                chewy.facingDirection = .up
             }
             else if downMovementButton.contains(touchLocation) {
                 chewy.position.y -= gridSize
+                chewy.facingDirection = .down
+            }
+            else if arrowButton.contains(touchLocation) {
+                spawnArrow(position: chewy.position, direction: chewy.facingDirection)
             }
         }
     }
