@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let cam = SKCameraNode()
     var inputControls : InputControls?
-    var levelBuilder : LevelBuilder = LevelBuilder()
     
     override func didMove(to view: SKView) {
         // set the camera to be our camera node
@@ -42,20 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(cam)
         
-        chewy.position = CGPoint(x: 8 * gridSize, y: 3 * gridSize)
-        gameEntities.append(chewy)
-        addChild(chewy)
-        
-        
-        for sprite in levelBuilder.createLevel(level: levelBuilder.levelOne)
-        {
-            addChild(sprite)
-            if (sprite.worthUpdating) {
-                gameEntities.append(sprite)
-            }
-        }
-        
-        
+        levelManager.nextLevel()
     }
     
     // this is where the collision code is run

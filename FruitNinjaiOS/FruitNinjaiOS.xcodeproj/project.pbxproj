@@ -14,6 +14,8 @@
 		BC68B9611DD7D30E0047DBD8 /* CollisionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */; };
 		BC68B9641DD7DA200047DBD8 /* PitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9631DD7DA200047DBD8 /* PitEntity.swift */; };
 		BC68B9661DD7E29E0047DBD8 /* TargetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */; };
+		BC68B9681DD7F06B0047DBD8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */; };
+		BC68B96A1DD802120047DBD8 /* SwitchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9691DD802120047DBD8 /* SwitchEntity.swift */; };
 		BC7BE86E1DD7061700C1503D /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86D1DD7061700C1503D /* assets */; };
 		BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC7BE86F1DD7081700C1503D /* sprites.atlas */; };
 		BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91C1F81DD6F90E0006A326 /* Chewy.swift */; };
@@ -35,6 +37,8 @@
 		BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionHandler.swift; sourceTree = "<group>"; };
 		BC68B9631DD7DA200047DBD8 /* PitEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitEntity.swift; sourceTree = "<group>"; };
 		BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetEntity.swift; sourceTree = "<group>"; };
+		BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
+		BC68B9691DD802120047DBD8 /* SwitchEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchEntity.swift; sourceTree = "<group>"; };
 		BC7BE86D1DD7061700C1503D /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		BC7BE86F1DD7081700C1503D /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		BC91C1F81DD6F90E0006A326 /* Chewy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chewy.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 				BC91C1F81DD6F90E0006A326 /* Chewy.swift */,
 				BC68B9631DD7DA200047DBD8 /* PitEntity.swift */,
 				BC68B9651DD7E29E0047DBD8 /* TargetEntity.swift */,
+				BC68B9691DD802120047DBD8 /* SwitchEntity.swift */,
 			);
 			name = GameEntities;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 				BC68B9621DD7D9C60047DBD8 /* GameEntities */,
 				E74813E61DD6DBB30060E14A /* GameScene.swift */,
 				BC68B9601DD7D30E0047DBD8 /* CollisionHandler.swift */,
+				BC68B9671DD7F06B0047DBD8 /* LevelManager.swift */,
 				BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */,
 				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
 				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
@@ -197,7 +203,9 @@
 				BC91C1F91DD6F90E0006A326 /* Chewy.swift in Sources */,
 				E74813E11DD6DBB30060E14A /* AppDelegate.swift in Sources */,
 				BC68B9641DD7DA200047DBD8 /* PitEntity.swift in Sources */,
+				BC68B96A1DD802120047DBD8 /* SwitchEntity.swift in Sources */,
 				BC91C1FD1DD6FE820006A326 /* Constants.swift in Sources */,
+				BC68B9681DD7F06B0047DBD8 /* LevelManager.swift in Sources */,
 				BC68B95D1DD7C3230047DBD8 /* GameEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

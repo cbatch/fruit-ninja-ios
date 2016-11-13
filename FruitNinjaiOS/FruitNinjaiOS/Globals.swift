@@ -14,6 +14,10 @@ var chewy : Chewy = Chewy()
 var gameEntities : [GameEntity] = []
 // Background
 var background : SKSpriteNode = SKSpriteNode(imageNamed: "background")
+// Level Builder
+var levelBuilder : LevelBuilder = LevelBuilder()
+// Level Manager
+var levelManager : LevelManager = LevelManager()
 
 let gridSize : CGFloat = 32.0
 

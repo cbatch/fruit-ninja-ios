@@ -14,39 +14,41 @@ class LevelBuilder
     var levelOne =
     [
         ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"],
-        ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"],
-        ["|","|","X","O"," "," "," "," "," "," "," "," ","O","X","|","|"],
+        ["|","|","-","-","-","-","-","D","-","-","-","-","-","-","|","|"],
+        ["|","|","X","O"," "," "," "," "," "," "," "," "," ","X","|","|"],
+        ["|","|","O"," "," "," "," "," "," "," "," "," "," "," ","|","|"],
+        ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","t","P","P","p","p","P","P","t","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|","P","P","P","P","P","p","p","P","P","P","P","P","|","|"],
+        ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
+        ["|","|"," "," "," "," "," "," "," "," "," "," "," "," ","|","|"],
+        ["|","|","<","~","~",">"," "," "," "," ","<","~","~",">","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","l",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","r"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","l",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","r"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","l",".",".","]","|","|"],
+        ["|","|","[",".",".","]"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","[",".",".","r"," "," "," "," ","[",".",".","]","|","|"],
+        ["|","|","(","_","_",")"," "," "," "," ","(","_","_",")","|","|"],
         ["|","|","O"," "," "," "," "," "," "," "," "," "," ","O","|","|"],
-        ["|","|","O"," "," "," "," "," "," "," "," "," "," ","O","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","t","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P","p","p","P","P","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","P","P","P","P"," "," "," "," ","P","P","P","P","|","|"],
-        ["|","|","X","X","X","X","r"," "," "," ","X","X","X","X","|","|"],
-        ["|","|","X","X","X","X"," "," "," "," ","X","X","X","X","|","|"],
-        ["|","|","X","X","X","X"," "," "," ","l","X","X","X","X","|","|"],
-        ["|","|","X","X","X","X"," "," "," "," ","X","X","X","X","|","|"],
-        ["|","|","X","X","X","X","r"," "," "," ","X","X","X","X","|","|"],
-        ["|","|","O"," "," "," "," "," "," "," "," "," "," ","O","|","|"],
-        ["|","|","X"," "," "," "," "," "," "," "," "," ","O","X","|","|"],
-        ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"],
+        ["|","|","X"," "," "," "," ","C"," "," "," "," ","O","X","|","|"],
+        ["|","|","-","-","-","-","-","d","-","-","-","-","-","-","|","|"],
         ["|","|","-","-","-","-","-","-","-","-","-","-","-","-","|","|"]
     ]
     
+    var levelTwo = [[""]]
+    var levelThree = [[""]]
     
     
     
@@ -60,9 +62,64 @@ class LevelBuilder
             {
                 let xCoord = CGFloat(column) * gridSize
                 let yCoord = CGFloat(level.count - row - 1) * gridSize
+                var yOffset = CGFloat(0.0)
                 var levelObject : GameEntity? = nil
                 switch (level[row][column])
                 {
+                case "]":
+                    levelObject = GameEntity(imageNamed: "wall_right")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "[":
+                    levelObject = GameEntity(imageNamed: "wall_left")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "_":
+                    levelObject = GameEntity(imageNamed: "wall_down")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "~":
+                    levelObject = GameEntity(imageNamed: "wall_up")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case ")":
+                    levelObject = GameEntity(imageNamed: "wall_corner_downright")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "(":
+                    levelObject = GameEntity(imageNamed: "wall_corner_downleft")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case ">":
+                    levelObject = GameEntity(imageNamed: "wall_corner_upright")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "<":
+                    levelObject = GameEntity(imageNamed: "wall_corner_upleft")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case ".":
+                    levelObject = GameEntity(imageNamed: "blank")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
                 case "|":
                     levelObject = GameEntity(imageNamed: "crate")
                     levelObject?.alpha = 0.0
@@ -77,6 +134,24 @@ class LevelBuilder
                     levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
                     levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "C":
+                    chewy = Chewy()
+                    chewy.position = CGPoint(x: xCoord, y: yCoord)
+                    gameEntities.append(chewy)
+                    scene!.addChild(chewy)
+                case "d":
+                    levelObject = GameEntity(imageNamed: "door_up")
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                    yOffset = CGFloat(-1 * levelObject!.size.height / 4)
+                case "D":
+                    levelObject = GameEntity(imageNamed: "door_down")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Door
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Door
+                    yOffset = CGFloat(levelObject!.size.height / 4)
                 case "l":
                     levelObject = ArrowTrapEntity(direction: .left)
                 case "O":
@@ -113,7 +188,7 @@ class LevelBuilder
                     
                 }
                 if let sprite = levelObject {
-                    sprite.position = CGPoint(x: xCoord, y: yCoord)
+                    sprite.position = CGPoint(x: xCoord, y: yCoord + yOffset)
                     sprite.physicsBody?.isDynamic = false
                     levelObjects.append(sprite)
                 }
