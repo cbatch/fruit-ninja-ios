@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC1263461DD90CA9001B1E77 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1263451DD90CA9001B1E77 /* Images-2.xcassets */; };
 		BC1263481DD90E90001B1E77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1263471DD90E90001B1E77 /* Images.xcassets */; };
 		BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */; };
 		BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC1263451DD90CA9001B1E77 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		BC1263471DD90E90001B1E77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowEntity.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
 				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
 				BC91C1FC1DD6FE820006A326 /* Constants.swift */,
-				BC1263451DD90CA9001B1E77 /* Images-2.xcassets */,
 			);
 			path = FruitNinjaiOS;
 			sourceTree = "<group>";
@@ -199,7 +196,6 @@
 				E74813EC1DD6DBB30060E14A /* Main.storyboard in Resources */,
 				BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */,
 				BC1263481DD90E90001B1E77 /* Images.xcassets in Resources */,
-				BC1263461DD90CA9001B1E77 /* Images-2.xcassets in Resources */,
 				E74813F11DD6DBB30060E14A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

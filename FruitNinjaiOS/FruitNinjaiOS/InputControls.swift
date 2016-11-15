@@ -53,6 +53,10 @@ class InputControls {
     
     func respondToTouchEvent(_ touches: Set<UITouch>, scene : SKScene) {
         
+        if scene.isPaused {
+            return;
+        }
+        
         for touch : AnyObject in touches {
             let touchLocation = touch.location(in: scene.camera!)
             
