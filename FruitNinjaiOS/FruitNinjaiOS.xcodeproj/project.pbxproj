@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1263461DD90CA9001B1E77 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1263451DD90CA9001B1E77 /* Images-2.xcassets */; };
+		BC1263481DD90E90001B1E77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1263471DD90E90001B1E77 /* Images.xcassets */; };
 		BC68B9571DD7148D0047DBD8 /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */; };
 		BC68B9591DD7BA940047DBD8 /* ArrowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */; };
 		BC68B95B1DD7C1680047DBD8 /* ArrowTrapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1263451DD90CA9001B1E77 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		BC1263471DD90E90001B1E77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC68B9561DD7148D0047DBD8 /* LevelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		BC68B9581DD7BA940047DBD8 /* ArrowEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowEntity.swift; sourceTree = "<group>"; };
 		BC68B95A1DD7C1680047DBD8 /* ArrowTrapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowTrapEntity.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		E74813DF1DD6DBB30060E14A /* FruitNinjaiOS */ = {
 			isa = PBXGroup;
 			children = (
+				BC1263471DD90E90001B1E77 /* Images.xcassets */,
 				BC7BE86F1DD7081700C1503D /* sprites.atlas */,
 				BC7BE86D1DD7061700C1503D /* assets */,
 				E74813E01DD6DBB30060E14A /* AppDelegate.swift */,
@@ -125,6 +130,7 @@
 				BC91C2001DD6FFD30006A326 /* InputControls.swift */,
 				BC91C1FE1DD6FF930006A326 /* Globals.swift */,
 				BC91C1FC1DD6FE820006A326 /* Constants.swift */,
+				BC1263451DD90CA9001B1E77 /* Images-2.xcassets */,
 			);
 			path = FruitNinjaiOS;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 				BC7BE86E1DD7061700C1503D /* assets in Resources */,
 				E74813EC1DD6DBB30060E14A /* Main.storyboard in Resources */,
 				BC7BE8701DD7081800C1503D /* sprites.atlas in Resources */,
+				BC1263481DD90E90001B1E77 /* Images.xcassets in Resources */,
+				BC1263461DD90CA9001B1E77 /* Images-2.xcassets in Resources */,
 				E74813F11DD6DBB30060E14A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +350,8 @@
 		E74813F61DD6DBB30060E14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 47VJ67SBVP;
 				INFOPLIST_FILE = FruitNinjaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -354,6 +364,8 @@
 		E74813F71DD6DBB30060E14A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 47VJ67SBVP;
 				INFOPLIST_FILE = FruitNinjaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
