@@ -123,6 +123,19 @@ class CollisionHandler
             if let arrow = (secondBody.node as? ArrowEntity)
             {
                 removeFromGameEntities(sprite: arrow)
+                if (arrow.onFire)
+                {
+                    if let obstacle = (firstBody.node as? GameEntity)
+                    {
+                        if let name = obstacle.imageName
+                        {
+                            if (name == "barrel")
+                            {
+                                removeFromGameEntities(sprite: obstacle)
+                            }
+                        }
+                    }
+                }
             }
         }
         if ((firstBody.categoryBitMask & PhysicsCategory.Arrow != 0) &&

@@ -10,8 +10,10 @@ import SpriteKit
 
 class GameEntity : SKSpriteNode
 {
+    var imageName : String?
     
     init(imageNamed: String) {
+        imageName = imageNamed
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: .black, size: texture.size())
     }

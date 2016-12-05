@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 0
+    var level : Int = 2
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     
@@ -54,6 +54,13 @@ class LevelManager
              gameEntities.append(guard5)
         case(2):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelThree)
+            let guard8 = guardBuilder.createGuard(level: guardBuilder.guard8)
+            scene!.addChild(guard8)
+            gameEntities.append(guard8)
+            switchAction = LevelManager.levelThreeSwitch
+            switchCounter = 8
+        case(3):
+            nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelFour)
             let guard6 = guardBuilder.createGuard(level: guardBuilder.guard6)
             let guard7 = guardBuilder.createGuard(level: guardBuilder.guard7)
             scene!.addChild(guard6)
@@ -62,7 +69,7 @@ class LevelManager
             gameEntities.append(guard7)
             switchAction = LevelManager.levelOneSwitch
             switchCounter = 13
-        case(3):
+        case(4):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.finalStage)
             switchAction = LevelManager.finalLevelSwitch
             switchCounter = 1
@@ -91,6 +98,20 @@ class LevelManager
             if let pit = (sprite as? PitEntity)
             {
                 pit.toggle = true
+            }
+        }
+    }
+    
+    static func levelThreeSwitch()
+    {
+        for sprite in gameEntities
+        {
+            if let name = sprite.name
+            {
+                if name == "fence"
+                {
+                    removeFromGameEntities(sprite: sprite)
+                }
             }
         }
     }
