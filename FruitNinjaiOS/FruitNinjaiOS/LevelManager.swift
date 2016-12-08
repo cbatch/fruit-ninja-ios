@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 1
+    var level : Int = 3
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     
@@ -108,7 +108,7 @@ class LevelManager
     {
         for sprite in gameEntities
         {
-            if let name = sprite.name
+            if let name = sprite.imageName
             {
                 if name == "fence"
                 {
