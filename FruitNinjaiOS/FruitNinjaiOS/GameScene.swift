@@ -66,6 +66,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // this is for the menu screen
+        if levelManager.level == 1 {
+            levelManager.nextLevel()
+            return
+        }
         
         inputControls!.respondToTouchEvent(touches, scene: self)
     }

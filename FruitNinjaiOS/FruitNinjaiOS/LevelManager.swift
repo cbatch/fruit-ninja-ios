@@ -11,7 +11,7 @@ import SpriteKit
 class LevelManager
 {
     var switchCounter : Int = 0
-    var level : Int = 2
+    var level : Int = 1
     var switches : [SwitchEntity] = []
     var switchAction : () -> Void
     
@@ -32,10 +32,12 @@ class LevelManager
         switch (level)
         {
         case (0):
+            nextLevelSprites = levelBuilder.getMenuSprites()
+        case (1):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelOne)
             switchCounter = 2
             switchAction = LevelManager.levelOneSwitch
-        case (1):
+        case (2):
              nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelTwo)
              let guard1 = guardBuilder.createGuard(level: guardBuilder.guard1)
              let guard2 = guardBuilder.createGuard(level: guardBuilder.guard2)
@@ -52,14 +54,14 @@ class LevelManager
              gameEntities.append(guard3)
              gameEntities.append(guard4)
              gameEntities.append(guard5)
-        case(2):
+        case(3):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelThree)
             let guard8 = guardBuilder.createGuard(level: guardBuilder.guard8)
             scene!.addChild(guard8)
             gameEntities.append(guard8)
             switchAction = LevelManager.levelThreeSwitch
             switchCounter = 8
-        case(3):
+        case(4):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.levelFour)
             let guard6 = guardBuilder.createGuard(level: guardBuilder.guard6)
             let guard7 = guardBuilder.createGuard(level: guardBuilder.guard7)
@@ -69,7 +71,7 @@ class LevelManager
             gameEntities.append(guard7)
             switchAction = LevelManager.levelOneSwitch
             switchCounter = 13
-        case(4):
+        case(5):
             nextLevelSprites = levelBuilder.createLevel(level: levelBuilder.finalStage)
             switchAction = LevelManager.finalLevelSwitch
             switchCounter = 1

@@ -416,6 +416,12 @@ class LevelBuilder
                     levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
                     levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
                     levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
+                case "N":
+                    levelObject = GameEntity(imageNamed: "fence")
+                    levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
+                    levelObject!.physicsBody?.categoryBitMask = PhysicsCategory.Obstacle
+                    levelObject!.physicsBody?.contactTestBitMask = PhysicsCategory.Ninja
+                    levelObject!.physicsBody?.collisionBitMask = PhysicsCategory.Obstacle
                 case "O":
                     levelObject = GameEntity(imageNamed: "barrel")
                     levelObject!.physicsBody = SKPhysicsBody(rectangleOf: levelObject!.size)
@@ -462,4 +468,27 @@ class LevelBuilder
         
         return levelObjects
     }
+    
+    
+    func getMenuSprites() -> [GameEntity]
+    {
+        var menuSprites : [GameEntity] = []
+        
+        let backgroundCover = GameEntity(imageNamed: "pit")
+        backgroundCover.size = CGSize(width: backgroundCover.size.width * gridSize, height: backgroundCover.size.height * gridSize)
+        backgroundCover.zPosition = 1
+        
+        
+        let tapToPlay = GameEntity(imageNamed: "arrow_down")
+        tapToPlay.position = CGPoint(x: scene!.cam.position.x, y: scene!.cam.position.y - scene!.frame.height / 2.5)
+        tapToPlay.zPosition = 1
+        
+        menuSprites.append(backgroundCover)
+        menuSprites.append(tapToPlay)
+        
+        return menuSprites
+    }
+    
+    
+    
 }
